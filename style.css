@@ -380,13 +380,14 @@ header .icons #menu-bars{
     padding: 1.5rem;
     overflow: hidden;
     position: relative;
+
 }
 
 .menu .box-container .box .image img{
     height: 100%;
     width: 100%;
     border-radius: .5rem;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .menu .box-container .box .image.fa-heart{
@@ -678,7 +679,46 @@ header .navbar a{
 
 
 
+ .from-left{
+   transform: translateX(-50%) 
+}
 
+.from-right{
+  transform: translateX(50%);
+}
+
+.from-left,
+.from-right{
+    transition: opacity 100ms ease-in,
+    transform 600ms ease-in-out;
+    opacity: 0;
+}
+
+.from-left.appear,
+.from-right.appear{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.fade-in{
+    opacity: 0;
+    transition: opacity 800ms ease-in;
+}
+
+.fade-in.appear{
+    opacity: 1;
+}
+
+@keyframes fade-in{
+    0%{ opacity: 0%;  }
+    100%{ opacity: 100%;  }
+}
+
+@keyframes size-in {
+  0%{ width: 0%}
+  100%{width: 100%;}  
+}
+   
 
 
 
